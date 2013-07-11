@@ -8,19 +8,11 @@ app.get('/', function(request, response) {
     var data;
     try {
         data = fs.readFileSync("index.html","utf8");
-/*        buf.write(data,"utf-8");
-        response.send(buf.toString("utf-8");*/
     } catch (e) {
         response.send("Error: Cannot open file!");
     }
-/*    var data = fs.readFileSync("index.html","utf8");*/
-    buf.write(data,"utf-8");
-    response.send(buf.toString("utf-8"));
-/*    fs.readFileSync("index.html", function (err,data) {
-        if (err) throw err;
-        buf.write(data,"utf-8");
-        response.send(buf.toString("utf-8"));
-    });*/
+    buf.write(data,"utf8");
+    response.send(buf.toString("utf8"));
 });
 
 var port = process.env.PORT || 5000;
