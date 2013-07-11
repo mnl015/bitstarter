@@ -7,14 +7,14 @@ app.get('/', function(request, response) {
     var fs = require("fs");
     var data;
     try {
-        data = fs.readFileSync("index.html");
-        buf.write(data,"utf-8");
-        response.send(buf.toString("utf-8");
+        data = fs.readFileSync("index.html","utf8");
+/*        buf.write(data,"utf-8");
+        response.send(buf.toString("utf-8");*/
     } catch (e) {
         response.send("Error: Cannot open file!");
     }
-/*    var data = fs.readFileSync("index.html","utf8");
-    buf.write(data);
+/*    var data = fs.readFileSync("index.html","utf8");*/
+    buf.write(data,"utf-8");
     response.send(buf.toString("utf-8"));
 /*    fs.readFileSync("index.html", function (err,data) {
         if (err) throw err;
