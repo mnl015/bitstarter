@@ -4,16 +4,16 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
     response.send("hello");
-/*    var buf = new Buffer(50);
+    var buf = new Buffer(50);
     var fs = require('fs');
-    var data = fs.readFileSync('index.html','utf8');
+/*    var data = fs.readFileSync('index.html','utf8');
     buf.write(data,'utf-8');
-    response.send(buf.toString('utf-8');
-    /*fs.readFileSync('index.html',function (err, data) {
+    response.send(buf.toString('utf-8');*/
+    fs.readFileSync("/home/ubuntu/bitstarter/index.html",function (err, data) {
         if (err) throw err;
         buf.write(data,'utf-8');
         response.send(buf.toString('utf-8'));
-    });*/
+    });
 });
 
 var port = process.env.PORT || 5000;
